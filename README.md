@@ -1,23 +1,9 @@
-A good README is the front page of your project on GitHub. It's the first thing recruiters and other developers will see.
-
-How to use this:
-
-Go to your ai-resume-parser repository on GitHub.
-
-Click the "Add a README" button.
-
-Copy the text below and paste it into the editor.
-
-Commit the changes.
-
 AI-Powered Resume Parser 🚀
 An intelligent web application designed to automate and enhance the resume screening process. This tool leverages the power of the Google Gemini API to parse resumes, analyze them against job descriptions, and generate valuable insights for recruiters and hiring managers.
 
 Live Demo
 
 https://ai-resume-parser.netlify.app/
-
-(Pro Tip: You can easily create a GIF of your app using a free tool like GIPHY Capture or ScreenToGif and upload it to your repository to replace this link.)
 
 Key Features ✨
 Multi-Format Upload: Accepts resumes in both PDF and DOCX formats.
@@ -41,7 +27,7 @@ File Processing: PDF.js, Mammoth.js (Client-side)
 
 PDF Generation: jsPDF (Client-side)
 
-Deployment: GitHub Pages & Netlify
+Deployment: Netlify
 
 How It Works
 Upload: A user uploads a resume (PDF/DOCX) and can optionally paste a job description.
@@ -55,18 +41,13 @@ Display Results: The frontend receives the JSON data and dynamically renders it 
 Export: The jsPDF library is used to generate a formatted PDF report from the structured data.
 
 Setup & Installation
-This project is fully client-side and can be run by simply opening the index.html file in a browser. However, to use the AI features, you must have a valid Google Gemini API key.
+This project is fully client-side. To run it locally:
 
 Clone the repository:
 
+Bash
+
 git clone https://github.com/Akshayreddy2004/ai-resume-parser.git
+Open index.html in your code editor and add your own Google Gemini API key to the apiKey variable.
 
-Navigate to the project directory:
-
-cd ai-resume-parser
-
-Open index.html in your code editor.
-
-Find the apiKey variable in the <script> section and paste in your own Google Gemini API key.
-
-Open the index.html file in your browser (preferably using a live server extension).
+Open the index.html file in your browser.
