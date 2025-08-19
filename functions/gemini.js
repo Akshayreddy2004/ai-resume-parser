@@ -6,7 +6,6 @@ exports.handler = async function (event) {
 
   // Get the secret API key from the environment variables
   const apiKey = process.env.GEMINI_API_KEY;
-  console.log("Is the API key present?", !!apiKey);
   const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
 
   const payload = {
@@ -23,7 +22,20 @@ exports.handler = async function (event) {
                 education: { type: "ARRAY", items: { type: "OBJECT", properties: { degree: { type: "STRING" }, institution: { type: "STRING" }, location: { type: "STRING" }, graduationDate: { type: "STRING" } } } },
                 skills: { type: "ARRAY", items: { type: "STRING" } },
                 jobMatch: { type: "OBJECT", properties: { score: { type: "NUMBER" }, justification: { type: "STRING" } } },
-                interviewQuestions: { type: "ARRAY", items: { type: "OBJECT", properties: { type: { type: "STRING" }, question: { type: "STRING" }, answer: { type: "STRING" } } } }
+                interviewQuestions: { 
+                    type: "ARRAY", 
+                    items: { 
+                        type: "OBJECT", 
+                        properties: { 
+                            type: { type: "STRING" }, 
+                            question: { type: "STRING" }, 
+                            answer: { 
+                                type: "STRING",
+                                description: "A sample answer to the question, formulated using specific details from the candidate's resume. This field is mandatory."
+                            } 
+                        } 
+                    } 
+                }
             }
         }
     }
@@ -53,5 +65,4 @@ exports.handler = async function (event) {
       body: JSON.stringify({ message: error.message })
     };
   }
-
 };
